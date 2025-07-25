@@ -8,8 +8,8 @@
 import { Game } from '../modules/Game.class';
 
 const game = new Game();
-const startButton = document.querySelector('button.start');
-const messageLose = document.querySelector('message-lose');
+const startButton = document.querySelector('.button.start');
+const messageLose = document.querySelector('.message-lose');
 
 startButton.addEventListener('click', () => {
   messageLose.classList.add('hidden');

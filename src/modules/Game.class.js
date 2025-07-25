@@ -37,9 +37,9 @@ export class Game {
   }
 
   start() {
-    this.board = this.createEmptyBoard;
+    this.board = this.createEmptyBoard();
     this.score = 0;
-    this.status = 'playng';
+    this.status = 'playing';
     this.addRandomTitle();
     this.addRandomTitle();
   }
@@ -110,14 +110,12 @@ export class Game {
   compress(row) {
     return row
       .filter((val) => val !== 0)
-      .contact(
-        Array(this.size - row.filter((val) => val !== 0).length).fill(0),
-      );
+      .concat(Array(this.size - row.filter((val) => val !== 0).length).fill(0));
   }
 
   merge(row) {
     for (let i = 0; i < this.size - 1; i++) {
-      if (row[i] !== 0 && row[i] === row[i] + 1) {
+      if (row[i] !== 0 && row[i] === row[i + 1]) {
         row[i] *= 2;
         this.score += row[i];
         row[i + 1] = 0;
