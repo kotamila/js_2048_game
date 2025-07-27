@@ -69,7 +69,7 @@ export class Game {
     this.board[randRow][randCol] = Math.random() < 0.9 ? 2 : 4;
   }
 
-  moveToLeft() {
+  moveLeft() {
     let moved = false;
 
     for (let row = 0; row < this.size; row++) {
@@ -89,7 +89,7 @@ export class Game {
     }
   }
 
-  moveToRight() {
+  moveRight() {
     this.board = this.board.map((row) => row.reverse());
     this.moveToLeft();
     this.board = this.board.map((row) => row.reverse());

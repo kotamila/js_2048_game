@@ -30,12 +30,12 @@ document.addEventListener('keydown', (e) => {
 
   switch (e.key) {
     case 'ArrowLeft':
-      game.moveToLeft();
+      game.moveLeft();
       moved = true;
       break;
 
     case 'ArrowRight':
-      game.moveToRight();
+      game.moveRight();
       moved = true;
       break;
 
