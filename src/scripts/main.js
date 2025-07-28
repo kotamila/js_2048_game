@@ -9,6 +9,7 @@ import { Game } from '../modules/Game.class';
 
 const game = new Game();
 const startButton = document.querySelector('button.start');
+const messageStart = document.querySelector('.message-start');
 const messageLose = document.querySelector('.message-lose');
 
 startButton.addEventListener('click', () => {
@@ -91,10 +92,12 @@ function updateGameStatus() {
 
 startButton.addEventListener('click', () => {
   messageLose.classList.add('hidden');
+  messageStart.classList.add('hidden');
   game.restart();
   startButton.textContent = 'Restart';
   startButton.classList.remove('start');
   startButton.classList.add('restart');
   renderBoard(game.getState());
   renderScore(game.getScore());
+  updateGameStatus();
 });

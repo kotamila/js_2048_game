@@ -159,6 +159,10 @@ h1 {
   &:hover {
     background: #179921;
   }
+
+  &.hidden {
+      display: none;
+  }
 }
 
 .restart {
