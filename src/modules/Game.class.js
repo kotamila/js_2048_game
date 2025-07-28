@@ -91,19 +91,19 @@ export class Game {
 
   moveRight() {
     this.board = this.board.map((row) => row.reverse());
-    this.moveToLeft();
+    this.moveLeft();
     this.board = this.board.map((row) => row.reverse());
   }
 
   moveUp() {
     this.transpose();
-    this.moveToLeft();
+    this.moveLeft();
     this.transpose();
   }
 
   moveDown() {
     this.transpose();
-    this.moveToRight();
+    this.moveRight();
     this.transpose();
   }
 
